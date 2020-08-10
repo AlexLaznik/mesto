@@ -1,0 +1,15 @@
+.profile__add-button {
+    background-image: url(../../../images/button-cursor.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #000;
+    width: 24px;
+    height: 24px;
+    border-color: #fff;
+}
+
+.profile__add-button:hover {
+    cursor: pointer;
+    opacity: .6;
+    transition: ease-out .4s;
+}

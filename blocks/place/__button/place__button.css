@@ -1,0 +1,11 @@
+.place__button {
+    position: absolute;
+    top: 315px;
+    left: 250px;
+    width: 21px;
+    height: 19px;
+    padding: 0;
+    background-image: url(../../../images/Vector4.jpg);
+    background-position: center;
+    border: none;
+}

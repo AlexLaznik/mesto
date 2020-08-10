@@ -1,0 +1,21 @@
+.profile__name {
+    text-align: center;
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 27px;
+    line-height: 56px;
+    color: #FFFFFF;
+    margin: 0;
+    padding-top: 16px;
+}
+
+@media screen and (min-width: 1024px) {
+    .profile__name {
+        font-size: 42px;
+        grid-area: name;
+        justify-self: self-start;
+        align-self: flex-end;
+        padding-left: 30px;
+    }
+}
