@@ -1,11 +1,13 @@
 .place__button {
-    position: absolute;
-    top: 315px;
-    left: 250px;
     width: 21px;
     height: 19px;
     padding: 0;
-    background-image: url(../../../images/Vector4.jpg);
+    background-image: url('../../../images/button-like.svg');
     background-position: center;
+    background-repeat: repeat;
+    background-color: #ffffff;
     border: none;
+    align-self: flex-end;
+    margin-bottom: 5px;
+    margin-right: 18px;
 }

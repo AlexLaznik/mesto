@@ -1,9 +1,9 @@
-.header__logo {
+.header__logo-mobile {
     padding-left: 27px;
 }
 
 @media screen and (min-width: 1024px) {
-    .header__logo {
-        padding-left: 0;
+    .header__logo-mobile {
+        display: none;
     }
 }

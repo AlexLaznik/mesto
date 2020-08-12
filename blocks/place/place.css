@@ -3,10 +3,9 @@
 @import url('./__content/place__content.css');
 
 .place {
-    position: relative;
     border-radius: 10px 10px 10px 10px;
     margin: auto;
     width: 282px;
-    height: 362px;
+    padding-bottom: 23px;
     background-color: #ffffff;
 }
