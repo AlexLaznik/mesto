@@ -1,5 +1,4 @@
-@import url('./__logo-mobile/header__logo-mobile.css');
-@import url('./__logo-desktop/header__logo-desktop.css');
+@import url('./__logo/header__logo.css');
 
 .header {
     padding-top: 28px;

@@ -1,9 +1,0 @@
-.header__logo-mobile {
-    padding-left: 27px;
-}
-
-@media screen and (min-width: 1024px) {
-    .header__logo-mobile {
-        display: none;
-    }
-}
