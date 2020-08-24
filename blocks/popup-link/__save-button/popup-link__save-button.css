@@ -1,0 +1,28 @@
+.popup-link__save-button {
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+    margin: 36px 0 0 16px;
+    padding: 0;
+    width: 250px;
+    height: 50px;
+    background-color: #000000;
+    border-radius: 2px;
+    border: none;
+}
+
+.popup-link__save-button:hover {
+    cursor: pointer;
+    opacity: .8;
+    transition: ease-out .4s;
+}
+
+@media screen and (min-width: 1024px) {
+    .popup-link__save-button {
+        margin: 48px 0 0 36px;
+        width: 358px;
+    }
+}

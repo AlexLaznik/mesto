@@ -1,4 +1,4 @@
-.place__button {
+.place__like-button {
     width: 21px;
     height: 19px;
     padding: 0;
@@ -12,8 +12,9 @@
     margin-right: 18px;
 }
 
-.place__button:hover {
+.place__like-button:hover {
     cursor: pointer;
     opacity: .6;
     transition: ease-out .4s;
+    transform: scale(1.3);
 }

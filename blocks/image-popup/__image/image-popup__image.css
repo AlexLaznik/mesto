@@ -1,0 +1,17 @@
+.image-popup__image {
+    width: 240px;
+    height: 299px;
+}
+
+@media screen and (min-width: 768px) {
+    .image-popup__image {
+        width: 433px;
+        height: 540px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .image-popup__image {
+        width: 816px;
+    }
+}
