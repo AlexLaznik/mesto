@@ -100,21 +100,11 @@ const addItemToContainer = (name, link) => {
         imagePopup.querySelector('.image-popup__figcaption').textContent = placeText;
         imagePopup.classList.add('popup_opened');
     });
+
     imagePopupClose = () =>{
         imagePopup.classList.remove('popup_opened');
     };
     imagePopupCloseButton.addEventListener('click', imagePopupClose);
-
-//    let imagePopupText = document.querySelector('.image-popup__figcaption');
-//    let imagePopupToggle = () => {
-//        if (imagePopup.classList.contains('popup_opened')) {
-//            
-//        } 
-//        imagePopup.classList.toggle('popup_opened');
-//    };
-
-//imagePopupOpenButton.addEventListener('click', imagePopupToggle);
-//imagePopupCloseButton.addEventListener('click', imagePopupToggle);
 }
 
 initialCards.forEach(cards => {
@@ -129,4 +119,3 @@ addPlaceToForm.addEventListener('submit', evt => {
     popupImageToggle();
     addPlaceToForm.reset();
 });
-
