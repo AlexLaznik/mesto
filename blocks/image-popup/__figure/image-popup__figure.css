@@ -1,23 +1,4 @@
 .image-popup__figure {
-    width: 240px;
-    height: 299px;
     margin: 0 auto;
-    position: fixed;
-    top: 195px;
-    left: 0;
-    bottom: 0;
-    right: 0;
-}
-
-@media screen and (min-width: 768px) {
-    .image-popup__figure {
-        width: 433px;
-        height: 540px;
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    .image-popup__figure {
-        width: 816px;
-    }
+    position: relative;
 }

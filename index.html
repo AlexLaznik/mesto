@@ -53,8 +53,8 @@
             <h2 class="popup-link__title">Новое место</h2>
             <form class="popup-link__form" name="popup-link-form">
                 <fieldset class="popup-link__fieldset">
-                    <input type="text" class="popup-link__input popup-link__input-0" placeholder="Название" name="popup-link-place">
-                    <input type="url" class="popup-link__input popup-link__input-1" placeholder="Ссылка на картинку" name="popup-link-surce">
+                    <input type="text" class="popup-link__input popup-link__type_text" placeholder="Название" name="popup-link-place">
+                    <input type="url" class="popup-link__input popup-link__type_url" placeholder="Ссылка на картинку" name="popup-link-surce">
                 </fieldset>
                 <button class="popup-link__save-button" type="submit">Создать</button>
             </form>
@@ -62,17 +62,19 @@
     </section>
 
     <section class="image-popup">
-        <figure class="image-popup__figure">
-            <img class="image-popup__image" src="" alt="Изображение">
-            <figcaption class="image-popup__figcaption"></figcaption>
-            <button class="image-popup__button"></button>
-        </figure>
+        <div class="image-popup__container">
+            <figure class="image-popup__figure">
+                <img class="image-popup__image" src="" alt="Изображение">
+                <figcaption class="image-popup__figcaption"></figcaption>
+                <button class="image-popup__button"></button>
+            </figure>
+        </div>
     </section>
 
     <template id="place-template">
         <article class="place">
             <button class="place__remove-button" type="reset"></button>
-            <img class="place__image" src="Изображение">
+            <img class="place__image" src="" alt="Изображение">
             <div class="place__content">
                 <h2 class="place__paragraph"></h2>
                 <button class="place__like-button" type="button"></button>
@@ -80,6 +82,7 @@
         </article>
     </template>
 
+    <script src="scripts/cards.js"></script>
     <script src="scripts/index.js"></script>
 </body>
 </html>
