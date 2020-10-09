@@ -33,11 +33,11 @@
         <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
     </footer>
 
-    <section class="popup">
+    <section class="popup popup-profile">
         <div class="popup__container">
-            <button class="popup__close-button" type="reset"></button>
+            <button class="popup__close-button popup-profile__close-button" type="reset"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
-            <form class="popup__form" name="popup-form">
+            <form class="popup__form popup-profile__form" name="popup-form">
                 <fieldset class="popup__fieldset">
                     <input type="text" class="popup__input" placeholder="Жак-Ив Кусто" name="popup-name">
                     <input type="text" class="popup__input" placeholder="Исследователь океана" name="popup-job">
@@ -47,16 +47,16 @@
         </div>
     </section>
 
-    <section class="popup-link">
-        <div class="popup-link__container">
-            <button class="popup-link__close-button" type="reset"></button>
-            <h2 class="popup-link__title">Новое место</h2>
-            <form class="popup-link__form" name="popup-link-form">
-                <fieldset class="popup-link__fieldset">
-                    <input type="text" class="popup-link__input popup-link__type_text" placeholder="Название" name="popup-link-place">
-                    <input type="url" class="popup-link__input popup-link__type_url" placeholder="Ссылка на картинку" name="popup-link-surce">
+    <section class="popup popup-link">
+        <div class="popup__container">
+            <button class="popup__close-button popup-link__close-button" type="reset"></button>
+            <h2 class="popup__title">Новое место</h2>
+            <form class="popup__form popup-link__form" name="popup-link-form">
+                <fieldset class="popup__fieldset">
+                    <input type="text" class="popup__input popup-link__type_text" placeholder="Название" name="popup-link-place">
+                    <input type="url" class="popup__input popup-link__type_url" placeholder="Ссылка на картинку" name="popup-link-surce">
                 </fieldset>
-                <button class="popup-link__save-button" type="submit">Создать</button>
+                <button class="popup__save-button" type="submit">Создать</button>
             </form>
         </div>
     </section>
