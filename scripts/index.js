@@ -61,6 +61,7 @@ const addCard = (data) => {
         const placeImage = place.querySelector('.place__image').src;
         const placeText = place.querySelector('.place__paragraph').textContent;
         popupImage.querySelector('.popup-image__picture').src = placeImage;
+        popupImage.querySelector('.popup-image__picture').alt = placeText;
         popupImage.querySelector('.popup-image__figcaption').textContent = placeText;
         togglePopup(popupImage);
     });
