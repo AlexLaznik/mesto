@@ -1,4 +1,4 @@
-.image-popup__container {
+.popup-image__container {
     display: flex;
     margin: 0 auto;
     position: fixed;
@@ -8,14 +8,14 @@
 }
 
 @media screen and (max-width: 848px) {
-    .image-popup__container {
+    .popup-image__container {
         width: 433px;
         height: 540px;
     }
 }
 
 @media screen and (max-width: 480px) {
-    .image-popup__container {
+    .popup-image__container {
         width: 240px;
         height: 299px;
     }
