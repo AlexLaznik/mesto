@@ -7,7 +7,6 @@ const profileInputName = popupProfile.querySelector('.popup__input_name');
 const profileInputText = popupProfile.querySelector('.popup__input_text');
 const profileName = document.querySelector('.profile__name');
 const profileJob = document.querySelector('.profile__job');
-//////////////////////////////////////////////////////
 const popupLink = document.querySelector('.popup-link');
 const popupLinkOpenButton = document.querySelector('.profile__button');
 const popupLinkCloseButton = popupLink.querySelector('.popup-link__close-button');
@@ -19,21 +18,37 @@ const popupImageCloseButton = popupImage.querySelector('.popup-image__close-butt
 
 
 
-const togglePopup = (popup) => {
-    popup.classList.toggle('popup_opened');
+const openPopup = (popup) => {
+    popup.classList.add('popup_opened');
+};
+
+const closePopup = (popup) => {
+    popup.classList.remove('popup_opened');
+};
+
+const overlayPopup = (evt) => {
+    if (evt.target === evt.currentTarget) {
+        closePopup(evt.target);
+    }
+};
+
+const closeEscapeButton = (evt) => {
+    if (evt.key === 'Escape') {
+        window.close();
+    }
 };
 
 const openProfilePopup = () => {
     profileInputName.value = profileName.textContent;
     profileInputText.value = profileJob.textContent;
-    togglePopup(popupProfile);
+    openPopup(popupProfile);
 };
 
 const submitFormHandler = (evt) => {
     evt.preventDefault();
     profileName.textContent = profileInputName.value;
     profileJob.textContent = profileInputText.value;
-    togglePopup(popupProfile);
+    closePopup(popupProfile);
 };
 
 const renderCards = () => {
@@ -63,7 +78,7 @@ const addCard = (data) => {
         popupImage.querySelector('.popup-image__picture').src = placeImage;
         popupImage.querySelector('.popup-image__picture').alt = placeText;
         popupImage.querySelector('.popup-image__figcaption').textContent = placeText;
-        togglePopup(popupImage);
+        openPopup(popupImage);
     });
 
     return card;
@@ -76,21 +91,35 @@ const submitCard = (evt) => {
     arr.link = addPlaceToForm.querySelector('.popup-link__type_url').value; 
     const item = addCard(arr);
     placesContainer.prepend(item);
-    togglePopup(popupLink);
+    closePopup(popupLink);
 };
 
-popupProfileOpenButton.addEventListener('click', () => togglePopup(popupProfile));
+popupProfile.addEventListener('click', overlayPopup);
 
-popupProfileCloseButton.addEventListener('click', () => togglePopup(popupProfile));
+popupProfileOpenButton.addEventListener('click', () => openPopup(popupProfile));
+
+popupProfileCloseButton.addEventListener('click', () => closePopup(popupProfile));
 
 formElement.addEventListener('submit', submitFormHandler);
 
-popupLinkOpenButton.addEventListener('click', () => togglePopup(popupLink));
+popupLink.addEventListener('click', overlayPopup);
 
-popupLinkCloseButton.addEventListener('click', () => togglePopup(popupLink));
+popupLinkOpenButton.addEventListener('click', () => openPopup(popupLink));
+
+popupLinkCloseButton.addEventListener('click', () => closePopup(popupLink));
 
 addPlaceToForm.addEventListener('submit', submitCard);
 
-popupImageCloseButton.addEventListener('click', () => togglePopup(popupImage));
+popupImage.addEventListener('click', overlayPopup);
+
+popupImageCloseButton.addEventListener('click', () => closePopup(popupImage));
+
+document.addEventListener('keydown', (evt) => {
+    if (evt.key === 'Escape') {
+        closePopup(popupProfile);
+        closePopup(popupLink);
+        closePopup(popupImage);
+    }
+});
 
 renderCards();
