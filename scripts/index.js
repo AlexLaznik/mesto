@@ -32,12 +32,6 @@ const overlayPopup = (evt) => {
     }
 };
 
-const closeEscapeButton = (evt) => {
-    if (evt.key === 'Escape') {
-        window.close();
-    }
-};
-
 const openProfilePopup = () => {
     profileInputName.value = profileName.textContent;
     profileInputText.value = profileJob.textContent;
