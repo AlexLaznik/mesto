@@ -32,6 +32,14 @@ const overlayPopup = (evt) => {
     }
 };
 
+const closeEscapeButton = (evt) => {
+    if (evt.key === 'Escape') {
+        const closeModal = document.querySelector('.popup_opened');
+        closePopup(closeModal);
+        closeModal.removeEventListener('keydown', closeEscapeButton);
+    } 
+};
+
 const openProfilePopup = () => {
     profileInputName.value = profileName.textContent;
     profileInputText.value = profileJob.textContent;
@@ -81,8 +89,10 @@ const addCard = (data) => {
 const submitCard = (evt) => {
     evt.preventDefault();
     const arr = {};
-    arr.name = addPlaceToForm.querySelector('.popup-link__type_text').value;
-    arr.link = addPlaceToForm.querySelector('.popup-link__type_url').value; 
+    const name = addPlaceToForm.querySelector('.popup-link__type_text');
+    const link = addPlaceToForm.querySelector('.popup-link__type_url'); 
+    arr.name = name.value;
+    arr.link = link.value;
     const item = addCard(arr);
     placesContainer.prepend(item);
     closePopup(popupLink);
@@ -108,12 +118,6 @@ popupImage.addEventListener('click', overlayPopup);
 
 popupImageCloseButton.addEventListener('click', () => closePopup(popupImage));
 
-document.addEventListener('keydown', (evt) => {
-    if (evt.key === 'Escape') {
-        closePopup(popupProfile);
-        closePopup(popupLink);
-        closePopup(popupImage);
-    }
-});
+document.addEventListener('keydown', closeEscapeButton);
 
 renderCards();
