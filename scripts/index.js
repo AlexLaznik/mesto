@@ -12,14 +12,15 @@ const popupLinkOpenButton = document.querySelector('.profile__button');
 const popupLinkCloseButton = popupLink.querySelector('.popup-link__close-button');
 const placesContainer = document.querySelector('.places');
 const addPlaceToForm = document.querySelector('.popup-link__form');
+const popupLinkText = addPlaceToForm.querySelector('.popup-link__type_text');
+const popupLinkUrl = addPlaceToForm.querySelector('.popup-link__type_url'); 
 const template = document.querySelector('.place-template');
 const popupImage = document.querySelector('.popup-image');
 const popupImageCloseButton = popupImage.querySelector('.popup-image__close-button');
 
-
-
 const openPopup = (popup) => {
     popup.classList.add('popup_opened');
+    document.addEventListener('keydown', closeEscapeButton);
 };
 
 const closePopup = (popup) => {
@@ -36,7 +37,7 @@ const closeEscapeButton = (evt) => {
     if (evt.key === 'Escape') {
         const closeModal = document.querySelector('.popup_opened');
         closePopup(closeModal);
-        closeModal.removeEventListener('keydown', closeEscapeButton);
+        document.removeEventListener('keydown', closeEscapeButton);
     } 
 };
 
@@ -89,10 +90,8 @@ const addCard = (data) => {
 const submitCard = (evt) => {
     evt.preventDefault();
     const arr = {};
-    const name = addPlaceToForm.querySelector('.popup-link__type_text');
-    const link = addPlaceToForm.querySelector('.popup-link__type_url'); 
-    arr.name = name.value;
-    arr.link = link.value;
+    arr.name = popupLinkText.value;
+    arr.link = popupLinkUrl.value;
     const item = addCard(arr);
     placesContainer.prepend(item);
     closePopup(popupLink);
@@ -117,7 +116,5 @@ addPlaceToForm.addEventListener('submit', submitCard);
 popupImage.addEventListener('click', overlayPopup);
 
 popupImageCloseButton.addEventListener('click', () => closePopup(popupImage));
-
-document.addEventListener('keydown', closeEscapeButton);
 
 renderCards();
