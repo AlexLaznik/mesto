@@ -25,6 +25,7 @@ const openPopup = (popup) => {
 
 const closePopup = (popup) => {
     popup.classList.remove('popup_opened');
+    document.removeEventListener('keydown', closeEscapeButton);
 };
 
 const overlayPopup = (evt) => {
@@ -37,7 +38,6 @@ const closeEscapeButton = (evt) => {
     if (evt.key === 'Escape') {
         const closeModal = document.querySelector('.popup_opened');
         closePopup(closeModal);
-        document.removeEventListener('keydown', closeEscapeButton);
     } 
 };
 
