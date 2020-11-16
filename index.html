@@ -39,9 +39,9 @@
             <form class="popup__form popup-profile__form" name="profile-form" novalidate>
                 <fieldset class="popup__fieldset">
                     <input id="name-profile" type="text" class="popup__input popup__input_name" placeholder="Имя" name="name-profile" minlength="2" maxlength="40" required autocomplete="off">
-                    <span id="name-profile-error" class="popup__error_visible"></span>
+                    <span id="name-profile-error" class="popup__input_type_error"></span>
                     <input id="job-profile" type="text" class="popup__input popup__input_text" placeholder="Профессия" name="job-profile" minlength="2" maxlength="200" required autocomplete="off">
-                    <span id="job-profile-error" class="popup__error_visible"></span>
+                    <span id="job-profile-error" class="popup__input_type_error"></span>
                 </fieldset>
                 <button class="popup__button" type="submit">Сохранить</button>
             </form>
@@ -55,9 +55,9 @@
             <form class="popup__form popup-link__form" name="link-form" novalidate>
                 <fieldset class="popup__fieldset">
                     <input id="name-card" type="text" class="popup__input popup-link__type_text" value="" placeholder="Название" name="name-card" minlength="2" maxlength="30" required autocomplete="off">
-                    <span id="name-card-error" class="popup__error_visible"></span>
+                    <span id="name-card-error" class="popup__input_type_error"></span>
                     <input id="link-card" type="url" class="popup__input popup-link__type_url" value="" placeholder="Ссылка на картинку" name="link-card" required autocomplete="off">
-                    <span id="link-card-error" class="popup__error_visible"></span>
+                    <span id="link-card-error" class="popup__input_type_error"></span>
                 </fieldset>
                 <button class="popup__button" type="submit">Создать</button>
             </form>
@@ -86,8 +86,6 @@
     </template>
 
     <script src="scripts/cards.js"></script>
-    <script src="scripts/index.js"></script>
-    <script src="scripts/forms.js"></script>
-    <script src="scripts/validate.js"></script>
+    <script type="module"src="scripts/index.js"></script>
 </body>
 </html>
