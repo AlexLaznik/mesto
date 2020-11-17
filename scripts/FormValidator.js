@@ -1,9 +1,9 @@
 export class FormValidator {
-    constructor(data, formElements) {
+    constructor(data, formElement) {
         this._data = data;
-        this._formElements = formElements;
-        this._inputElements = Array.from(formElements.querySelectorAll(data.inputSelector));
-        this._buttonElement = formElements.querySelector(data.submitButtonSelector)
+        this._formElement = formElement;
+        this._inputElements = Array.from(formElement.querySelectorAll(data.inputSelector));
+        this._buttonElement = formElement.querySelector(data.submitButtonSelector)
     }
 
     _invalidInput() {
@@ -23,7 +23,7 @@ export class FormValidator {
     }
 
     _checkInputValidity(input) {
-        const errorElement = this._formElements.querySelector(`#${input.id}-error`);
+        const errorElement = this._formElement.querySelector(`#${input.id}-error`);
         if (!input.validity.valid) {
             this._showError(input,  errorElement);
         } else {
@@ -49,7 +49,7 @@ export class FormValidator {
         });
     });
 
-        this._formElements.addEventListener('submit', (evt) => evt.preventDefault());
+        this._formElement.addEventListener('submit', (evt) => evt.preventDefault());
     }
 
     enableValidation() {
