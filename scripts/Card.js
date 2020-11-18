@@ -23,8 +23,9 @@ export class Card {
     }
 
     _addItem() {
-        this._template.querySelector(this._item.imageSelector).src = this._data.link;
-        this._template.querySelector(this._item.imageSelector).alt = this._data.name;
+        this._cardImage = this._template.querySelector(this._item.imageSelector);
+        this._cardImage.src = this._data.link;
+        this._cardImage.alt = this._data.name;
         this._template.querySelector(this._item.paragraphSelector).textContent = this._data.name;
     }
     
@@ -34,7 +35,7 @@ export class Card {
 
         this._likeButton.addEventListener('click', () => this._like());
         this._removeButton.addEventListener('click', () => this._delete());
-        this._template.addEventListener('click', () => imagePopup(this._data));
+        this._cardImage.addEventListener('click', () => imagePopup(this._data));
     }
 
     render() {

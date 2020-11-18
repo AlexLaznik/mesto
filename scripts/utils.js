@@ -1,23 +1,6 @@
-export const popupProfile = document.querySelector('.popup-profile');
-export const popupProfileOpenButton = document.querySelector('.profile__add-button');
-export const popupProfileCloseButton = popupProfile.querySelector('.popup-profile__close-button');
-export const formElement = document.querySelector('.popup__form');
-export const profileInputName = popupProfile.querySelector('.popup__input_name');
-export const profileInputText = popupProfile.querySelector('.popup__input_text');
-export const profileName = document.querySelector('.profile__name');
-export const profileJob = document.querySelector('.profile__job');
-export const popupLink = document.querySelector('.popup-link');
-export const popupLinkOpenButton = document.querySelector('.profile__button');
-export const popupLinkCloseButton = popupLink.querySelector('.popup-link__close-button');
-export const container = document.querySelector('.places');
-export const addPlaceToForm = document.querySelector('.popup-link__form');
-export const popupLinkText = addPlaceToForm.querySelector('.popup-link__type_text');
-export const popupLinkUrl = addPlaceToForm.querySelector('.popup-link__type_url'); 
-
 export const popupImage = document.querySelector('.popup-image');
-export const popupImagePicture = popupImage.querySelector('.popup-image__picture');
-export const popupImageFigcaption = popupImage.querySelector('.popup-image__figcaption');
-export const popupImageCloseButton = popupImage.querySelector('.popup-image__close-button');
+const popupImagePicture = popupImage.querySelector('.popup-image__picture');
+const popupImageFigcaption = popupImage.querySelector('.popup-image__figcaption');
 
 export const openPopup = (popup) => {
     popup.classList.add('popup_opened');
@@ -44,31 +27,9 @@ export const closeEscapeButton = (evt) => {
     } 
 }
 
-export const openProfilePopup = () => {
-    profileInputName.value = profileName.textContent;
-    profileInputText.value = profileJob.textContent;
-    openPopup(popupProfile);
-}
-
-export const submitFormHandler = () => {
-    profileName.textContent = profileInputName.value;
-    profileJob.textContent = profileInputText.value;
-    closePopup(popupProfile);
-}
-
 export const imagePopup = (data) => {
     popupImagePicture.src = data.link;
     popupImagePicture.alt = data.name;
     popupImageFigcaption.textContent = data.name;
     openPopup(popupImage);
-}
-
-export const submitCard = () => {
-    const cardInfo = {
-        name: popupLinkText.value,
-        link: popupLinkUrl.value
-    };
-    const item = addCard(cardInfo);
-    container.prepend(item);
-    closePopup(popupLink);
 }
