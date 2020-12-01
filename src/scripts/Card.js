@@ -1,7 +1,6 @@
-import { imagePopup } from './utils.js'
-
 export class Card {
-    constructor(data, templateSelector) {
+    constructor(data, templateSelector, handleCardClick) {
+        this._handeCardClick = handleCardClick;
         this._data = data;
         this._item = {
             templateSelector: templateSelector,
@@ -35,7 +34,7 @@ export class Card {
 
         this._likeButton.addEventListener('click', () => this._like());
         this._removeButton.addEventListener('click', () => this._delete());
-        this._cardImage.addEventListener('click', () => imagePopup(this._data));
+        this._cardImage.addEventListener('click', () => this._handeCardClick(this._data.link, this._data.name));
     }
 
     render() {

@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Место</title>
-    <link rel="stylesheet" href="./page/index.css">
+    <!-- <link rel="stylesheet" href="./page/index.css"> -->
 </head>
 <body class="page">
 
     <header class="header">
-        <img class="header__logo" src="./images/logo-mobile.svg" alt="Логотип">
+        <img class="header__logo" src="<%=require('./images/logo-mobile.svg')%>" alt="Логотип">
     </header>
 
     <main class="main">
 
         <section class="profile">
-            <img class="profile__image" src="./images/image.jpg" alt="Жак-Ив Кусто">
+            <img class="profile__image" src="<%=require('./images/image.jpg')%>" alt="Жак-Ив Кусто">
             <div class="profile__container">
                 <h1 class="profile__name">Жак-Ив Кусто</h1>
                 <button class="profile__add-button" type="button"></button>
@@ -69,7 +69,7 @@
             <figure class="popup-image__figure">
                 <img class="popup-image__picture" src="" alt="Изображение">
                 <figcaption class="popup-image__figcaption"></figcaption>
-                <button class="popup-image__close-button" type="reset"></button>
+                <button class="popup__close-button popup-image__close-button" type="reset"></button>
             </figure>
         </div>
     </section>
@@ -85,7 +85,6 @@
         </article>
     </template>
 
-    <script src="scripts/cards.js"></script>
-    <script type="module"src="scripts/index.js"></script>
+    <script type="module"src="page/index.js"></script>
 </body>
 </html>
